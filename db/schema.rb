@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_032639) do
   end
 
   create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.text "text"
+    t.text "text", null: false
     t.bigint "user_id"
     t.bigint "prototype_id"
     t.datetime "created_at", precision: 6, null: false
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 2021_04_16_032639) do
   end
 
   create_table "prototypes", charset: "utf8", force: :cascade do |t|
-    t.string "title"
-    t.text "catch_copy"
-    t.text "concept"
-    t.text "image"
+    t.string "title", null: false
+    t.text "catch_copy", null: false
+    t.text "concept", null: false
+    t.text "image", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
